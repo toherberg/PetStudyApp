@@ -455,3 +455,6 @@ $RECYCLE.BIN/
 
 appsettings.json
 API/petstudyapp.db
+API/petstudyapp.db-shm
+API/petstudyapp.db-wal
+
