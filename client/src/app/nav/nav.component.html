@@ -18,17 +18,18 @@
             </li>
         </ul>
         <div class="dropdown" *ngIf="(accountService.currentUser$ | async) as user" dropdown>
-            <a class="dropdown-toggle text-light" dropdownToggle>Welcome, {{user.username | titlecase}}!</a>
-            <div class="dropdown-menu mt-3" *dropdownMenu="">
-                <a routerLink='/member/edit' class="dropdown-item">Edit Profile</a>
+            <img src="{{user.photoUrl}}" alt="{{user.username}}">
+            <a class=" dropdown-toggle text-light ml-2" dropdownToggle>Welcome, {{user.username | titlecase}}!</a>
+            <div class="dropdown-menu mt-3" *dropdownMenu=" ">
+                <a routerLink='/member/edit' class="dropdown-item ">Edit Profile</a>
                 <div class="dropdown-divider"></div>
-                <a href="" class="dropdown-item" (click)="logout()">Logout</a>
+                <a href=" " class="dropdown-item " (click)="logout() ">Logout</a>
             </div>
         </div>
-        <form *ngIf="(accountService.currentUser$ | async) === null" #loginForm="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off">
+        <form *ngIf="(accountService.currentUser$ | async)===null" #loginForm="ngForm" class="d-flex" (ngSubmit)="login()" autocomplete="off">
             <input name="username" [(ngModel)]="model.username" class="form-control mr-sm-2" type="text" placeholder="Username">
             <input name="password" [(ngModel)]="model.password" class="form-control mr-sm-2" type="password" placeholder="Password">
-            <button class="btn btn-success my-2 my-sm-0" type="submit ">Login</button>
+            <button class="btn btn-success my-2 my-sm-0" type="submit">Login</button>
         </form>
     </div>
 </nav>
